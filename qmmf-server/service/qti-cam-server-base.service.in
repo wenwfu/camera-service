@@ -33,7 +33,10 @@
 Description= Camera Server Service
 Documentation=https://github.com/qualcomm/camera-service
 SourcePath=/usr/bin/qti-cam-server
-After=var-volatile-lib.service
+DefaultDependencies=no
+After=dev-cam_req_mgr.device
+Before=shutdown.target
+Conflicts=shutdown.target
 
 [Service]
 User=@CAM_SERVER_USER@
